@@ -24,7 +24,7 @@ class CustomerController extends Controller
         $rules = [
             'nama' => 'required',
             'alamat' => 'required',
-            'no_telepon' => 'required'
+            'no_telepon' => 'required|min:12|max:12'
         ];
 
         $validator = Validator::make($data, $rules);
