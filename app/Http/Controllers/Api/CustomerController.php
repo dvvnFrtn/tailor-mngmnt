@@ -24,7 +24,7 @@ class CustomerController extends Controller
         $rules = [
             'nama' => 'required',
             'alamat' => 'required',
-            'no_telepon' => 'required'
+            'no_telepon' => 'required|min:12|max:12'
         ];
 
         $validator = Validator::make($data, $rules);
@@ -43,5 +43,41 @@ class CustomerController extends Controller
             'data' => $customer
         ], 201);
 
+    }
+
+    public function update(Request $request, string $id){
+        $nama = $request->nama;
+        $alamat = $request->alamat;
+        $no_telepon = $request->no_telepon;
+
+        $data = [
+            'nama' => $nama,
+            'alamat' => $alamat,
+            'no_telepon' => $no_telepon
+        ];
+
+        $rules = [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telepon' => 'required|min:12|max:12'
+        ];
+
+        $validator = Validator::make($data, $rules);
+
+        if($validator->fails()) {
+            return response()->json([
+                'message' => 'Validasi Error.',
+                'data' => $validator->errors()
+            ], 400);
+        }
+
+        $customer = Customer::where('id', $id)->update($data);
+
+        $updatedCustomer = Customer::find($id);
+
+        return response()->json([
+            'message' => 'Berhasil mengupdate data customer.',
+            'data' => $updatedCustomer
+        ], 200);
     }
 }
