@@ -80,4 +80,21 @@ class CustomerController extends Controller
             'data' => $updatedCustomer
         ], 200);
     }
+    public function getAll(Request $request)
+    {
+        $customers = Customer::all();
+
+        if($customers->isEmpty()) {
+            return response()->json([
+                'status' => 404,
+                'message' => 'Data customer tidak ditemukan'
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Berhasil mendapatkan data customer',
+            'data' => $customers,
+        ], 200);
+    }
 }
