@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -107,6 +108,24 @@ class CustomerController extends Controller
             'status' => 200,
             'message' => 'Berhasil mendapatkan data customer.',
             'data' => $customers,
+        ], 200);
+    }
+
+    public function getById(string $id)
+    {
+        try {
+            $customer = Customer::findOrFail($id);
+        } catch (ModelNotFoundException $ex) {
+            return response()->json([
+                'status' => 404,
+                'message' => 'Data customer tidak ditemukan.',
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Berhasil mendapatkan data customer.',
+            'data' => $customer
         ], 200);
     }
 }

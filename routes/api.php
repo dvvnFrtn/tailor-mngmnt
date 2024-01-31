@@ -22,3 +22,5 @@ Route::put('customers/{id}', [CustomerController::class, 'update']);
 Route::delete('customers/{id}', [CustomerController::class, 'destroy']);
 
 Route::get('customers', [CustomerController::class, 'getAll']);
+
+Route::get('customers/{id}', [CustomerController::class, 'getById']);
