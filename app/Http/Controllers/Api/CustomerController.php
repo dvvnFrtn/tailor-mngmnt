@@ -80,4 +80,13 @@ class CustomerController extends Controller
             'data' => $updatedCustomer
         ], 200);
     }
+
+    public function destroy(string $id){
+        $customer = Customer::destroy($id);
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Berhasil menghapus data customer.'
+        ], 200);
+    }
 }
