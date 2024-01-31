@@ -39,10 +39,10 @@ class CustomerController extends Controller
         $customer = Customer::create($data);
 
         return response()->json([
+            'status' => 201,
             'message' => 'Berhasil menambahkan data customer.',
             'data' => $customer
         ], 201);
-
     }
 
     public function update(Request $request, string $id){
@@ -66,6 +66,7 @@ class CustomerController extends Controller
 
         if($validator->fails()) {
             return response()->json([
+                'status' => 400,
                 'message' => 'Validasi Error.',
                 'data' => $validator->errors()
             ], 400);
@@ -76,6 +77,7 @@ class CustomerController extends Controller
         $updatedCustomer = Customer::find($id);
 
         return response()->json([
+            'status' => 200,
             'message' => 'Berhasil mengupdate data customer.',
             'data' => $updatedCustomer
         ], 200);
@@ -87,6 +89,24 @@ class CustomerController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Berhasil menghapus data customer.'
+        ], 200);
+    }
+
+    public function getAll(Request $request)
+    {
+        $customers = Customer::all();
+
+        if($customers->isEmpty()) {
+            return response()->json([
+                'status' => 404,
+                'message' => 'Data customer tidak ditemukan.'
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Berhasil mendapatkan data customer.',
+            'data' => $customers,
         ], 200);
     }
 }
