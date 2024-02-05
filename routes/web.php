@@ -22,4 +22,5 @@ use App\Http\Controllers\adminController;
 // });
 
 Route::get('/', [adminController::class, 'dashboard']);
-Route::get('/pelanggan', [adminController::class, 'pelanggan']);
+Route::get('/dashboardTambah', [adminController::class, 'dashboardTambah']);
+

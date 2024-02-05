@@ -12,8 +12,8 @@ class adminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function pelanggan()
+    public function dashboardTambah()
     {
-        return view('admin.pelanggan');
+        return view('admin.dashboardTambah');
     }
 }
