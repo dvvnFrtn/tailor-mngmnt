@@ -7,14 +7,20 @@
     font-family: poppins;
 }
 
+body{
+    background: #FF788B;
+}
+
 .custom-nav{
     background-color: #FF788B;
+    border: none;
 }
 
 .custom-sidebar {
     background-color: #FF788B;
     box-shadow: none !important;
     padding: 0 10px;
+    overflow: hidden;
 }
 
 .bg-pink {
@@ -54,6 +60,7 @@
 
 .sidebar {
     height: 80vh !important;
+    
 }
 
 .custom-item {
@@ -77,4 +84,18 @@
 
 .custom-item .nav-item:hover a, .custom-item .nav-item.active a{
     color: #FF788B !important;
+}
+
+.custom-cw{
+    border-radius: 25px;
+    box-shadow: 4px 4px 8px rgb(0 0 0 / 50%);
+}
+
+.custom-wrap{
+    padding: 20px 20px 0 20px;
+}
+
+.main-footer{
+    background: #FF788B;
+    border: none;
 }
