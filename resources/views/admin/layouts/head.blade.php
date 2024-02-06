@@ -25,4 +25,6 @@
   <link rel="stylesheet" href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}">
   <!-- custom.css -->
   <link rel="stylesheet" href="{{asset('assets/custom.css')}}">
+  <!-- custom style sheila -->
+  <link rel="stylesheet" href="{{asset('assets/customsheila.css')}}">
 </head>

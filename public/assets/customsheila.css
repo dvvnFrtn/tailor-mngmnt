@@ -1,0 +1,55 @@
+.customForm{
+    width: 50%;
+    margin: 0 0 0 100px;
+    padding-top: 100px;
+    height: fit-content;
+}
+.text-header{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-control {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 60px;
+    background: #f4f6f9;
+  }
+
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: none;
+    background: #f4f6f9;
+  }
+
+  label {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    pointer-events: none;
+    padding: 0 10px;
+    transition: all 0.2s ease-out;
+    font-size: 0.75rem;
+    transform: translateY(-1rem);
+    background: #f4f6f9;
+  }
+
+  .form-control:not(:placeholder-shown) + label {
+    font-size: 0.75rem;
+    transform: translateY(-1rem);
+  }
+
+  .button-tambah{
+    background: #FF788B ;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .tailor{
+    float: right;
+  }
