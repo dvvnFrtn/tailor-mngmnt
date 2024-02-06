@@ -6,7 +6,7 @@
       
       <form class="customForm">
         <p class="text-header">
-           Tambah Pelanggan 
+           Edit Pelanggan 
         </p>
         <div class="form-group">
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
@@ -20,7 +20,7 @@
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
         <label for="exampleFormControlInput1">Alamat</label>
       </div>
-      <button type="button" class="button-tambah">Tambah</button>
+      <button type="button" class="button-tambah">Update</button>
     </form>
     <div class="d-flex justify-content-end">
     <img class="tailor" src="{{asset("assets/icon/tailor.png")}}" alt="tailor">
