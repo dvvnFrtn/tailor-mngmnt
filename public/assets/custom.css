@@ -99,3 +99,38 @@ body{
     background: #FF788B;
     border: none;
 }
+
+.d-header{
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.btn-pink{
+    background: #FFDCEA;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.tabel-custom thead tr th {
+    box-shadow: 0px 4px 3px 0px rgb(0 0 0 / 21%);
+    background: #C7F2FF;
+    border: none;
+    text-align: center;
+}
+
+.tabel-custom tbody tr td {
+    border-top: none;
+    border-bottom: 1px solid #D3D8DF;
+}
+
+.btn-t{
+    color: white;
+    background-color: #FF788B;
+    font-size: 12px;
+    width: 70px;
+    text-align: center;
+}
